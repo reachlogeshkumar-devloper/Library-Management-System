@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Library Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <div class="logo">
+            📚 <span>Libra</span>
+        </div>
+
+       <nav>
+    <button class="nav-btn active"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+        Dashboard
+    </button>
+
+    <button class="nav-btn" onclick="document.getElementById('booksSection').scrollIntoView({ behavior: 'smooth' })">
+        Books
+    </button>
+
+    <button class="nav-btn" onclick="document.getElementById('studentsSection').scrollIntoView({ behavior: 'smooth' })">
+        Students
+    </button>
+
+    <button class="nav-btn" onclick="document.getElementById('issueSection').scrollIntoView({ behavior: 'smooth' })">
+        Issue Book
+    </button>
+
+    <button class="nav-btn" onclick="document.getElementById('returnsSection').scrollIntoView({ behavior: 'smooth' })">
+        Returns
+    </button>
+
+    <button class="nav-btn"
+    onclick="document.getElementById('historySection').scrollIntoView({ behavior: 'smooth' })">
+    History
+</button>
+</nav>
+
+
+
+    </div>
+
+
+    <main class="main-content">
+
+        <header>
+            <div>
+                <p class="welcome">WELCOME BACK</p>
+                <h1>Library Dashboard</h1>
+            </div>
+
+            <div class="profile">
+                👤 <span>Admin</span>
+            </div>
+        </header>
+
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <div>
+                    <p>Total Books</p>
+                    <h2 id="totalBooks">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">👨‍🎓</div>
+                <div>
+                    <p>Total Students</p>
+                    <h2 id="totalStudents">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📖</div>
+                <div>
+                    <p>Books Issued</p>
+                    <h2 id="booksIssued">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div>
+                    <p>Total Fine</p>
+                    <h2 id="totalFine">₹0</h2>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="content-section">
+
+            <div class="section-header">
+                <div>
+                    <h2>Library Overview</h2>
+                    <p>Manage your books and students easily.</p>
+                </div>
+
+                <button class="primary-btn"
+    onclick="document.getElementById('issueSection').scrollIntoView({ behavior: 'smooth' })">
+    + Issue Book
+</button>
+            </div>
+
+
+            <div class="welcome-box">
+
+                <div>
+                    <span class="big-icon">📚</span>
+                </div>
+
+                <div>
+                    <h2>Welcome to Libra Library</h2>
+
+                    <p>
+                        Manage books, students, book issues,
+                        returns and fines from one place.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        
+<section class="content-card" id="recentIssuesSection">
+    <div class="section-header">
+        <h2>Recent Book Issues</h2>
+        <span>Latest borrowing records</span>
+    </div>
+
+    <div id="recentIssuesList"></div>
+</section>
+
+
+        <section class="content-card" id="booksSection">
+    <div class="section-header">
+        <h2>Books</h2>
+        <span>Library Collection</span>
+    </div>
+
+    <div id="booksList"></div>
+</section>
+
+<section class="content-card" id="studentsSection"> 
+    <div class="section-header">
+        <h2>Students</h2>
+        <span>Registered Students</span>
+    </div>
+
+    <div id="studentsList"></div>
+</section>
+
+<section class="content-card" id="issueSection">
+    <div class="section-header">
+        <h2>Issue Book</h2>
+        <span>Issue a book to a student</span>
+    </div>
+
+    <form id="issueForm">
+
+        <label>Student</label>
+        <select id="studentId" required>
+            <option value="">Select Student</option>
+        </select>
+
+        <label>Book</label>
+        <select id="bookId" required>
+            <option value="">Select Book</option>
+        </select>
+
+        <label>Due Date</label>
+        <input type="date" id="dueDate" required>
+
+        <button type="submit" class="primary-btn">
+            Issue Book
+        </button>
+
+    </form>
+
+    <p id="issueMessage"></p>
+</section>
+
+
+<!-- Retuns Section Starts-->
+<section class="content-card" id="returnsSection">
+    <div class="section-header">
+        <h2>Returns</h2>
+        <span>Currently issued books</span>
+    </div>
+
+    <div id="returnsList"></div>
+</section>
+
+<!-- Retuns Section ends-->
+
+<!-- Student Issue History starts -->
+
+<section class="content-card" id="historySection">
+    <div class="section-header">
+        <h2>Student Issue History</h2>
+        <span>Book issue records</span>
+    </div>
+
+    <select id="historyStudent">
+        <option value="">Select Student</option>
+    </select>
+
+    <div id="historyList"></div>
+</section>
+
+<!-- Student Issue History ends -->
+    </main>
+
+<script src="script.js"></script>
+
+
+
+</body>
+</html>

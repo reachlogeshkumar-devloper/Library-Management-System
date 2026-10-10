@@ -1,0 +1,22 @@
+{
+  "name": "projectlibrary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+  "start": "node server.js",
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "postinstall": "prisma skills sync || exit 0"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@prisma/adapter-mariadb": "^7.10.0",
+    "@prisma/client": "^7.10.0",
+    "express": "^5.2.1",
+    "mariadb": "^3.5.4",
+    "prisma": "^7.10.0"
+  }
+}
